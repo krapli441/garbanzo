@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <div className="container">
-        <h1>hello</h1>
+        <h1>박준형</h1>
       </div>
     </>
   );
