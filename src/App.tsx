@@ -2,7 +2,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { createRoot, Root } from "react-dom/client";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // 리액트 컴포넌트
 import Header from "./components/views/header";
@@ -12,15 +12,17 @@ import Bottom from "./components/views/bottom";
 // css
 import "./css/root.css";
 
+// * center 스타일링
+
 // * container 스타일링
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default function App() {

@@ -7,6 +7,8 @@ import styled from "styled-components";
 //* 본문
 
 const BottomStyle = styled.div`
+  display: flex;
+  align-items: flex-end;
   width: 100vw;
   height: 10vh;
   background-color: black;
