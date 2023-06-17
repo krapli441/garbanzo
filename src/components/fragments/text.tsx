@@ -7,5 +7,5 @@ import { Button } from "./button";
 // * 본문
 
 export default function Myname() {
-  return <Button>박준형</Button>;
+  return <Button className="Button">박준형</Button>;
 }

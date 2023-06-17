@@ -4,6 +4,18 @@ import styled from "styled-components";
 
 // 리액트 컴포넌트
 
+// * 본문
+
+const HeaderStyle = styled.div`
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+`;
+
 export default function Header() {
-  return <div className="header">헤더</div>;
+  return (
+    <>
+      <HeaderStyle className="header">이곳은 헤더 헤더</HeaderStyle>
+    </>
+  );
 }
