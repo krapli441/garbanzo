@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 // 리액트 컴포넌트
-import { Button } from "../fragments/button";
+import UserInformation from "../fragments/userInfo";
 
 // * 본문
 
@@ -12,6 +12,7 @@ const MainStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 80vh;
   background-color: black;

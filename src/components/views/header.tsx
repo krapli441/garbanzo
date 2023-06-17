@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 // 리액트 컴포넌트
-
+import UserInformation from "../fragments/userInfo";
 // * 본문
 
 const HeaderStyle = styled.div`
@@ -16,11 +16,18 @@ const HeaderStyle = styled.div`
   color: white;
 `;
 
+const HeaderTitleStyle = styled.div`
+  font-size: 32px;
+`;
+
 export default function Header() {
   return (
     <>
       <HeaderStyle className="header">
-        <h1 className="titleText">krapli's portpolio</h1>
+        <HeaderTitleStyle className="headerTitle">
+          krapli's portpolio
+        </HeaderTitleStyle>
+        <UserInformation></UserInformation>
       </HeaderStyle>
     </>
   );
