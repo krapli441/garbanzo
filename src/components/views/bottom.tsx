@@ -13,5 +13,8 @@ const BottomStyle = styled.div`
 `;
 
 export default function Bottom() {
-  return <BottomStyle className="bottom">이곳은 바텀 바텀</BottomStyle>;
+  return <BottomStyle className="bottom">
+        <h1>바텀 영역입니다.</h1>
+    
+  </BottomStyle>;
 }

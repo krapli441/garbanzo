@@ -15,7 +15,9 @@ const HeaderStyle = styled.div`
 export default function Header() {
   return (
     <>
-      <HeaderStyle className="header">이곳은 헤더 헤더</HeaderStyle>
+      <HeaderStyle className="header">
+        <h1>헤더 영역입니다.</h1>
+      </HeaderStyle>
     </>
   );
 }

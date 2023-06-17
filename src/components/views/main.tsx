@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 // 리액트 컴포넌트
-import Introduce from "../fragments/text";
+import { Button } from "../fragments/button";
 
 // * 본문
 
@@ -17,8 +17,8 @@ export default function Main() {
   return (
     <>
       <MainStyle className="main">
-        <Introduce />
-        이곳은 메인 메인
+        <Button>버튼</Button>
+        <h1>메인 영역입니다.</h1>
       </MainStyle>
     </>
   );
