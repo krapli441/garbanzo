@@ -6,6 +6,10 @@ import styled from "styled-components";
 
 // * 본문
 
+const MouseText = styled.div`
+  font-size: 12px;
+`;
+
 export default function MouseTracking() {
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
@@ -26,9 +30,9 @@ export default function MouseTracking() {
 
   return (
     <>
-      <div>
+      <MouseText>
         {mouseX}px, {mouseY}px
-      </div>
+      </MouseText>
     </>
   );
 }

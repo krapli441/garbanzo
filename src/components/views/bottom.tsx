@@ -13,12 +13,12 @@ const BottomStyle = styled.div`
   height: 10vh;
   background-color: black;
   color: white;
-  margin-left: 120px;
   margin-bottom: 20px;
 `;
 
 const BottomText = styled.div`
   font-size: 20px;
+  margin-left: 60px;
 `;
 
 export default function Bottom() {
