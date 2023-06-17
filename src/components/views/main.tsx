@@ -22,6 +22,7 @@ const MainStyle = styled.div`
 const MyName = styled.p<{ fontWeight: string }>`
   font-size: 48px;
   font-weight: ${({ fontWeight }) => fontWeight};
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 `;
 
 export default function Main() {
