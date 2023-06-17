@@ -19,16 +19,16 @@ const MainStyle = styled.div`
 `;
 
 // Pretendard 폰트 속성을 가져옴.
-const MyName = styled.p`
-  font-size: 48px;
-  font-weight: ;
-`;
 
 export default function Main() {
   const [fontWeight, setFontWeight] = useState("bold");
   const fontType: Array<string | number> = [
     100, 200, 300, 400, 500, 600, 700, 800, 900,
   ];
+  const MyName = styled.p<{ fontWeight: string }>`
+    font-size: 48px;
+    font-weight: ${({ fontWeight }) => fontWeight};
+  `;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,8 +42,8 @@ export default function Main() {
   return (
     <>
       <MainStyle className="main">
-        <MyName className="nameText">
-          <span>박준형</span>
+        <MyName className="nameText" fontWeight={fontWeight}>
+          박준형
         </MyName>
       </MainStyle>
     </>
