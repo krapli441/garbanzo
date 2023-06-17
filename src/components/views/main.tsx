@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 // 리액트 컴포넌트
-import UserInformation from "../fragments/userInfo";
 
 // * 본문
 

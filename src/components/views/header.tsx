@@ -3,7 +3,9 @@ import React from "react";
 import styled from "styled-components";
 
 // 리액트 컴포넌트
-import UserInformation from "../fragments/userInfo";
+import UserInformation from "../utils/userInfo";
+import MouseTracking from "../utils/mouse";
+
 // * 본문
 
 const HeaderStyle = styled.div`
@@ -30,6 +32,7 @@ export default function Header() {
           krapli's portpolio
         </HeaderTitleStyle>
         <UserInformation></UserInformation>
+        <MouseTracking></MouseTracking>
       </HeaderStyle>
     </>
   );
