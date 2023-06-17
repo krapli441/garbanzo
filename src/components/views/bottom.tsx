@@ -9,12 +9,14 @@ import styled from "styled-components";
 const BottomStyle = styled.div`
   width: 100vw;
   height: 10vh;
-  background-color: white;
+  background-color: black;
+  color: white;
 `;
 
 export default function Bottom() {
-  return <BottomStyle className="bottom">
-        <h1>바텀 영역입니다.</h1>
-    
-  </BottomStyle>;
+  return (
+    <BottomStyle className="bottom">
+      <h1>krapli441@gmail.com</h1>
+    </BottomStyle>
+  );
 }

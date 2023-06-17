@@ -11,6 +11,7 @@ const MainStyle = styled.div`
   width: 100vw;
   height: 80vh;
   background-color: black;
+  color: white;
 `;
 
 export default function Main() {
@@ -18,7 +19,7 @@ export default function Main() {
     <>
       <MainStyle className="main">
         <Button>버튼</Button>
-        <h1>메인 영역입니다.</h1>
+        <h1>박준형</h1>
       </MainStyle>
     </>
   );

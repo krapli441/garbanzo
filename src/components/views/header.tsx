@@ -9,14 +9,15 @@ import styled from "styled-components";
 const HeaderStyle = styled.div`
   width: 100vw;
   height: 10vh;
-  background-color: white;
+  background-color: black;
+  color: white;
 `;
 
 export default function Header() {
   return (
     <>
       <HeaderStyle className="header">
-        <h1>헤더 영역입니다.</h1>
+        <h1 className="titleText">krapli's portpolio</h1>
       </HeaderStyle>
     </>
   );

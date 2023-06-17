@@ -10,18 +10,27 @@ import Main from "./components/views/main";
 import Bottom from "./components/views/bottom";
 
 // css
-import "./css/container.css";
+import "./css/root.css";
 
 // * container 스타일링
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+`;
 
 export default function App() {
   return (
     <>
-      <div className="container">
+      <Container className="container">
         <Header />
         <Main />
         <Bottom />
-      </div>
+      </Container>
     </>
   );
 }
