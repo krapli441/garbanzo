@@ -13,12 +13,18 @@ const BottomStyle = styled.div`
   height: 10vh;
   background-color: black;
   color: white;
+  margin-left: 120px;
+  margin-bottom: 20px;
+`;
+
+const BottomText = styled.div`
+  font-size: 20px;
 `;
 
 export default function Bottom() {
   return (
     <BottomStyle className="bottom">
-      <h1>krapli441@gmail.com</h1>
+      <BottomText>krapli441@gmail.com</BottomText>
     </BottomStyle>
   );
 }

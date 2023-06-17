@@ -14,6 +14,8 @@ const HeaderStyle = styled.div`
   height: 10vh;
   background-color: black;
   color: white;
+  margin-right: 120px;
+  margin-top: 20px;
 `;
 
 const HeaderTitleStyle = styled.div`
