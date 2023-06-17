@@ -43,9 +43,11 @@ export default function Main() {
   return (
     <>
       <MainStyle className="main">
+        안녕하세요.
         <MyName className="nameText" fontWeight={fontWeight}>
           박준형
         </MyName>
+        입니다.
       </MainStyle>
     </>
   );
