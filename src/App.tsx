@@ -2,12 +2,17 @@
 import React from "react";
 import { render } from "react-dom";
 import { createRoot, Root } from "react-dom/client";
+import styled from "styled-components";
 
 // 리액트 컴포넌트
-import Introduce from "./components/fragments/text";
 import Header from "./components/views/header";
 import Main from "./components/views/main";
 import Bottom from "./components/views/bottom";
+
+// css 모듈
+import style from "./css/container.module.css";
+
+// * container 스타일링
 
 export default function App() {
   return (

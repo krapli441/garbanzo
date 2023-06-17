@@ -8,7 +8,6 @@ export default function Main() {
   return (
     <>
       <div className="main">
-        메인
         <Introduce />
       </div>
     </>
