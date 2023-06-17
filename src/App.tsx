@@ -12,9 +12,7 @@ import Bottom from "./components/views/bottom";
 // css
 import "./css/root.css";
 
-// * center 스타일링
-
-// * container 스타일링
+// container 스타일링
 const Container = styled.div`
   display: flex;
   flex-direction: column;

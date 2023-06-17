@@ -7,6 +7,7 @@ import { Button } from "../fragments/button";
 
 // * 본문
 
+// main div 스타일링
 const MainStyle = styled.div`
   display: flex;
   justify-content: center;
@@ -17,16 +18,34 @@ const MainStyle = styled.div`
   color: white;
 `;
 
+// main 텍스트 스타일링
 const MyName = styled.p`
   font-size: 48px;
   font-weight: bold;
 `;
 
+// Pretendard 폰트 속성을 가져옴.
+const fontWeight: (string | number)[] = [
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  "bold",
+  "bolder",
+  "lighter",
+  "normal",
+];
+
 export default function Main() {
   return (
     <>
       <MainStyle className="main">
-        <MyName>박준형</MyName>
+        <MyName className="nameText">박준형</MyName>
       </MainStyle>
     </>
   );
