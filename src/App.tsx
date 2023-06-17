@@ -9,8 +9,8 @@ import Header from "./components/views/header";
 import Main from "./components/views/main";
 import Bottom from "./components/views/bottom";
 
-// css 모듈
-import style from "./css/container.module.css";
+// css
+import "./css/container.css";
 
 // * container 스타일링
 
