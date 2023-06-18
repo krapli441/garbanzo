@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 // 리액트 컴포넌트
+import RandomGradientColor from "../utils/color";
+import { text } from "stream/consumers";
 
 // * 본문
 
@@ -14,15 +16,16 @@ const MainStyle = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 80vh;
-  background-color: black;
-  color: white;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
-// Pretendard 폰트 속성을 가져옴.
 const MyName = styled.p<{ fontWeight: string }>`
   font-size: 48px;
   font-weight: ${({ fontWeight }) => fontWeight};
   transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: ${RandomGradientColor()};
 `;
 
 export default function Main() {
@@ -31,6 +34,7 @@ export default function Main() {
     100, 200, 300, 400, 500, 600, 700, 800, 900,
   ];
 
+  // main 텍스트의 굵기가 랜덤으로 변함
   useEffect(() => {
     const timer = setInterval(() => {
       const randomFontWeight = Math.floor(Math.random() * fontType.length);
@@ -38,7 +42,6 @@ export default function Main() {
       setFontWeight(newFontWeight);
     }, 1000);
   }, []);
-  // main 텍스트 스타일링
 
   return (
     <>
