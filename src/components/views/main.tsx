@@ -22,7 +22,11 @@ const gradientAnimation = keyframes`
 `;
 
 // 내 이름이 나오는 부분에 대한 스타일링
-const MyName = styled.p<{ fontWeight: string; textcolor: string }>`
+const MyName = styled.p<{
+  fontWeight: string;
+  textcolor: string;
+  opacity: number;
+}>`
   font-size: 48px;
   font-weight: ${({ fontWeight }) => fontWeight};
   background: ${({ textcolor }) => textcolor};
@@ -31,6 +35,7 @@ const MyName = styled.p<{ fontWeight: string; textcolor: string }>`
   animation: ${gradientAnimation} 5s ease-in-out infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: ${({ opacity }) => opacity};
 `;
 
 export default function Main() {
@@ -39,13 +44,16 @@ export default function Main() {
   const textcolor = useRandomTextColor();
   // 기본 박스 크기
   const [boxSize, setBoxSize] = useState({ width: 8, height: 15 });
+  const [opacity, setOpacity] = useState(1);
 
   // 클릭시 변경될 박스 크기
   const handleClick = () => {
     setBoxSize((prevSize) => {
+      setOpacity(1);
       if (prevSize.width === 95 && prevSize.height === 95) {
         return { width: 8, height: 15 };
       } else {
+        setOpacity(0);
         return { width: 95, height: 95 };
       }
     });
@@ -80,6 +88,7 @@ export default function Main() {
             className="nameText"
             fontWeight={fontWeight}
             textcolor={textcolor}
+            opacity={opacity}
           >
             박준형
           </MyName>

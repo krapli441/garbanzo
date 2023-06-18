@@ -10,8 +10,8 @@ const Box = styled.div<{ width: number; height: number }>`
   justify-content: center;
   padding: 10px 20px;
   border: 2px solid white;
-  transition: 0.4s ease;
   cursor: pointer;
+  transition: 0.4s ease;
 `;
 
 export { Box };
