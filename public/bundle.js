@@ -64,7 +64,7 @@
   width: 100%;
   height: 100%;
 `,p=o.default.img`
-  width: 100%;
+  width: 71%;
   height: 50%;
   object-fit: cover;
 `;t.default=function(){return a.default.createElement(s,{className:"introduceBox"},a.default.createElement(u,{className:"fisrt"},a.default.createElement(f,null,"좋은 디자인이 곧 좋은 경험으로 이어진다고 믿습니다.",a.default.createElement("br",null),"UI, UX에 깊은 관심을 갖고 있습니다.",a.default.createElement("br",null),"인간에 대한 탐구를 즐겨 합니다.",a.default.createElement("br",null),"세상의 좋은 모든 음악들을 사랑합니다.",a.default.createElement("br",null),"여유가 있을 때 음악을 틀며 스트레스를 풉니다.",a.default.createElement("br",null))),a.default.createElement(c,{className:"second"},a.default.createElement(d,{className:"imageContainer"},a.default.createElement(i.default,null),a.default.createElement(p,{src:l.default,alt:"본인"}))))}},5977:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n);var a=Object.getOwnPropertyDescriptor(t,n);a&&!("get"in a?!t.__esModule:a.writable||a.configurable)||(a={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,a)}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),o=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t},i=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});const l=o(n(5466)),s=o(n(3454)),u=n(8591),c=n(499),f=i(n(2791)),d=n(6678),p=i(n(8139)),h=s.default.div`
