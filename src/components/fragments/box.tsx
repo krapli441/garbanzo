@@ -20,20 +20,4 @@ const Box = styled.div`
   }
 `;
 
-export default function ClickBox() {
-  const [expand, setExpand] = useState(false);
-
-  const handleClick = () => {
-    setExpand((prevExtend) => !prevExtend);
-  };
-
-  return (
-    <Box
-      style={{
-        width: expand ? "220px" : "200px",
-        height: expand ? "220px" : "200px",
-      }}
-      onClick={handleClick}
-    ></Box>
-  );
-}
+export { Box };
