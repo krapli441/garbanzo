@@ -26,8 +26,9 @@ const MyName = styled.p<{
   fontWeight: string;
   textcolor: string;
   opacity: number;
+  fontSize: number;
 }>`
-  font-size: 48px;
+  font-size: ${({ fontSize }) => fontSize}px;
   font-weight: ${({ fontWeight }) => fontWeight};
   background: ${({ textcolor }) => textcolor};
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -45,15 +46,18 @@ export default function Main() {
   // 기본 박스 크기
   const [boxSize, setBoxSize] = useState({ width: 8, height: 15 });
   const [opacity, setOpacity] = useState(1);
+  const [fontSize, setFontSize] = useState(48);
 
   // 클릭시 변경될 박스 크기
   const handleClick = () => {
     setBoxSize((prevSize) => {
       setOpacity(1);
+      setFontSize(48);
       if (prevSize.width === 95 && prevSize.height === 95) {
         return { width: 8, height: 15 };
       } else {
         setOpacity(0);
+        setFontSize(256);
         return { width: 95, height: 95 };
       }
     });
@@ -86,6 +90,7 @@ export default function Main() {
           안녕하세요.
           <MyName
             className="nameText"
+            fontSize={fontSize}
             fontWeight={fontWeight}
             textcolor={textcolor}
             opacity={opacity}
