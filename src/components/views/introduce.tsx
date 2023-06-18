@@ -4,6 +4,7 @@ import React, { useState } from "react";
 // 리액트 컴포넌트
 import styled from "styled-components";
 import Youtube from "react-youtube";
+import VideoPlayer from "../utils/Youtube";
 // 기타 파일
 
 import MyProfile from "../../img/me.jpg";
@@ -59,7 +60,7 @@ export default function NameBox() {
       </MyIntroduceFirstArea>
       <MyIntroduceSecondArea className="second">
         <ImageContainer className="imageContainer">
-          <Youtube className="player"></Youtube>
+          <VideoPlayer></VideoPlayer>
           <Image src={MyProfile} alt="본인" />
         </ImageContainer>
       </MyIntroduceSecondArea>
