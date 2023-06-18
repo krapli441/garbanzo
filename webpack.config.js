@@ -23,7 +23,7 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: [/\.png$/],
+        test: [/\.jpg$/],
         use: ["file-loader"],
       },
     ],
@@ -34,6 +34,6 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".png"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".jpg"],
   },
 };
