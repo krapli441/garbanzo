@@ -113,7 +113,6 @@ export default function Main() {
           <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
             안녕하세요.
           </HelloName>
-          {showText && ( // showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
             <MyName
               className="nameText"
               fontSize={fontSize}
@@ -123,7 +122,6 @@ export default function Main() {
             >
               박준형
             </MyName>
-          )}
           <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
             입니다.
           </HelloName>
