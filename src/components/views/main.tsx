@@ -65,7 +65,7 @@ export default function Main() {
   const fontWeight = useRandomFontWeight(fontType);
   const textcolor = useRandomTextColor();
   // 기본 박스 크기
-  const [boxSize, setBoxSize] = useState({ width: 8, height: 15 });
+  const [boxSize, setBoxSize] = useState({ width: 12, height: 18 });
   const [opacity, setOpacity] = useState(1);
   const [fontSize, setFontSize] = useState(48);
   const [helloFontSize, setHelloFontSize] = useState(14);
@@ -100,14 +100,14 @@ export default function Main() {
   // 마우스 Enter 시 변경될 박스 크기
   const handleMouseEnter = () => {
     if (boxSize.width !== 95 && boxSize.height !== 95) {
-      setBoxSize({ width: 9, height: 18 });
+      setBoxSize({ width: 15, height: 24 });
     }
   };
 
   // 마우스 Leave 시 변경될 박스 크기
   const handleMouseLeave = () => {
     if (boxSize.width !== 95 && boxSize.height !== 95) {
-      setBoxSize({ width: 8, height: 15 });
+      setBoxSize({ width: 12, height: 18 });
     }
   };
 
