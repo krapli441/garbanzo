@@ -51,6 +51,13 @@ const HelloName = styled.p<{
   -webkit-text-fill-color: transparent;
 `;
 
+const BoxContents = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
@@ -71,6 +78,7 @@ export default function Main() {
       setFontSize(48);
       setHelloFontSize(14);
       setShowText(true);
+
       if (prevSize.width === 95 && prevSize.height === 95) {
         return { width: 8, height: 15 };
       } else {
@@ -81,6 +89,7 @@ export default function Main() {
         setTimeout(() => {
           setShowText(false);
         }, 300); // 0.3초 후에 MyName 컴포넌트를 제거
+
         return { width: 95, height: 95 };
       }
     });
@@ -110,21 +119,25 @@ export default function Main() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
-            안녕하세요.
-          </HelloName>
-            <MyName
-              className="nameText"
-              fontSize={fontSize}
-              fontWeight={fontWeight}
-              textcolor={textcolor}
-              opacity={opacity}
-            >
-              박준형
-            </MyName>
-          <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
-            입니다.
-          </HelloName>
+          {showText && ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
+            <BoxContents className="boxContents">
+              <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
+                안녕하세요.
+              </HelloName>
+              <MyName
+                className="nameText"
+                fontSize={fontSize}
+                fontWeight={fontWeight}
+                textcolor={textcolor}
+                opacity={opacity}
+              >
+                박준형
+              </MyName>
+              <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
+                입니다.
+              </HelloName>
+            </BoxContents>
+          )}
         </Box>
       </MainStyle>
     </>
