@@ -27,7 +27,6 @@ const MyName = styled.p<{ fontWeight: string; textColor: string }>`
   background: ${({ textColor }) => textColor};
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-size: 200% auto;
-	// 위에 선언한 keyframe을 animation에 넣어줌.
   animation: ${gradientAnimation} 5s ease-in-out infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
