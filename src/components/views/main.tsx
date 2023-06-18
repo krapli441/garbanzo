@@ -121,7 +121,7 @@ export default function Main() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {showText ? ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
+          {showText ? ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링한다.
             <BoxContents className="boxContents">
               <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
                 안녕하세요.
