@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const BackgroundColor = "white";
 const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 5px;
-  border: 5px solid ${BackgroundColor};
+  border: 2px solid white;
 `;
 
-export { BackgroundColor, Box };
+export default Box;

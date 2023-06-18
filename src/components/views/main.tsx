@@ -1,11 +1,12 @@
-// 리액트 라이브러리
+// 리액트 라이브러리, 훅스
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import { useRandomTextColor } from "../Hooks/RandomColorHooks";
+import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 
 // 리액트 컴포넌트
 import styles from "../../css/main.style";
-import { useRandomTextColor } from "../Hooks/RandomColorHooks";
-import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
+import Box from "../fragments/box";
 // * 본문
 
 // main div 스타일링
@@ -21,10 +22,10 @@ const gradientAnimation = keyframes`
 `;
 
 // 내 이름이 나오는 부분에 대한 스타일링
-const MyName = styled.p<{ fontWeight: string; textColor: string }>`
+const MyName = styled.p<{ fontWeight: string; textcolor: string }>`
   font-size: 48px;
   font-weight: ${({ fontWeight }) => fontWeight};
-  background: ${({ textColor }) => textColor};
+  background: ${({ textcolor }) => textcolor};
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-size: 200% auto;
   animation: ${gradientAnimation} 5s ease-in-out infinite;
@@ -35,20 +36,22 @@ const MyName = styled.p<{ fontWeight: string; textColor: string }>`
 export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
-  const textColor = useRandomTextColor();
+  const textcolor = useRandomTextColor();
 
   return (
     <>
       <MainStyle className="main">
-        안녕하세요.
-        <MyName
-          className="nameText"
-          fontWeight={fontWeight}
-          textColor={textColor}
-        >
-          박준형
-        </MyName>
-        입니다.
+        <Box>
+          안녕하세요.
+          <MyName
+            className="nameText"
+            fontWeight={fontWeight}
+            textcolor={textcolor}
+          >
+            박준형
+          </MyName>
+          입니다.
+        </Box>
       </MainStyle>
     </>
   );
