@@ -11,7 +11,6 @@ const BottomStyle = styled.div`
   align-items: flex-end;
   width: 100vw;
   height: 10vh;
-  background-color: black;
   color: white;
   margin-bottom: 20px;
 `;

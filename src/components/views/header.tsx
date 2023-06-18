@@ -14,7 +14,6 @@ const HeaderStyle = styled.div`
   align-items: flex-end;
   width: 100vw;
   height: 10vh;
-  background-color: black;
   color: white;
   margin-right: 120px;
   margin-top: 20px;
