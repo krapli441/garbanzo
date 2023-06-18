@@ -1,5 +1,5 @@
 // 리액트 라이브러리, 훅스
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useRandomTextColor } from "../Hooks/RandomColorHooks";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
