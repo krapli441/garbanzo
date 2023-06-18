@@ -4,29 +4,23 @@ import styled, { keyframes } from "styled-components";
 
 // 리액트 컴포넌트
 import RandomGradientColor from "../utils/color";
+import styles from "../../css/main.style";
 
 // * 본문
 
 // main div 스타일링
 const MainStyle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 80vh;
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  ${styles.MainStyle}
 `;
 
-// 그라디언트 애니메이션 keyframes을 설정해줌
+// 그라디언트 애니메이션 keyframes 설정
 const gradientAnimation = keyframes`
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 `;
 
+// 내 이름이 나오는 부분에 대한 스타일링
 const MyName = styled.p<{ fontWeight: string; textColor: string }>`
   font-size: 48px;
   font-weight: ${({ fontWeight }) => fontWeight};
@@ -37,7 +31,6 @@ const MyName = styled.p<{ fontWeight: string; textColor: string }>`
   animation: ${gradientAnimation} 5s ease-in-out infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 `;
 
 export default function Main() {
