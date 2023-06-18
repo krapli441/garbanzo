@@ -16,7 +16,7 @@ const MainStyle = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 80vh;
-  background: -webkit-linear-gradient(#eee, #333);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -25,7 +25,9 @@ const MyName = styled.p<{ fontWeight: string }>`
   font-size: 48px;
   font-weight: ${({ fontWeight }) => fontWeight};
   transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: ${RandomGradientColor()};
+  background: ${RandomGradientColor()};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 export default function Main() {

@@ -5,22 +5,19 @@
 // * 본문
 
 function RandomGradientColor() {
-  const color1 = GenerateRandomRGB();
-  const color2 = GenerateRandomRGB();
+  const color1 = GenerateRandomHexColor();
+  const color2 = GenerateRandomHexColor();
 
   const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
 
   return gradient;
 }
 
-function GenerateRandomRGB() {
-  // 0부터 255 사이의 무작위 정수 생성
-
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-
-  return `rgb(${r}, ${g}, ${b})`;
+function GenerateRandomHexColor() {
+  const color = Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0");
+  return `#${color}`;
 }
 
 export default RandomGradientColor;
