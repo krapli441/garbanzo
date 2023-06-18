@@ -1,5 +1,8 @@
 import React from "react";
 import YouTube from "react-youtube";
+import dotenv from "dotenv";
+
+dotenv.config({ path: "../../../.env" });
 
 const VideoPlayer = () => {
   // YouTube 동영상 ID를 가져옵니다.
@@ -10,6 +13,7 @@ const VideoPlayer = () => {
     width: "480px",
     playerVars: {
       autoplay: 1,
+      key: process.env.youtubeApi,
     },
   };
 
