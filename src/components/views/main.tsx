@@ -20,6 +20,7 @@ const MainStyle = styled.div`
   -webkit-text-fill-color: transparent;
 `;
 
+// 그라디언트 애니메이션 keyframes을 설정해줌
 const gradientAnimation = keyframes`
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -32,6 +33,7 @@ const MyName = styled.p<{ fontWeight: string; textColor: string }>`
   background: ${({ textColor }) => textColor};
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-size: 200% auto;
+	// 위에 선언한 keyframe을 animation에 넣어줌.
   animation: ${gradientAnimation} 5s ease-in-out infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,7 +45,6 @@ export default function Main() {
   const fontType: Array<string | number> = [
     100, 200, 300, 400, 500, 600, 700, 800, 900,
   ];
-
   const [textColor, setTextColor] = useState(RandomGradientColor());
 
   // main 텍스트의 굵기가 랜덤으로 변함
@@ -55,6 +56,7 @@ export default function Main() {
     }, 1000);
   }, []);
 
+  // main 텍스트의 색깔이 랜덤으로 변함
   useEffect(() => {
     const timer = setInterval(() => {
       setTextColor(RandomGradientColor());
