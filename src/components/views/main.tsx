@@ -80,7 +80,7 @@ export default function Main() {
         setFontSize(256);
         setTimeout(() => {
           setShowText(false);
-        }, 300); // 0.3초 후에 MyName 컴포넌트를 제거하기 위해 300ms로 설정합니다.
+        }, 300); // 0.3초 후에 MyName 컴포넌트를 제거
         return { width: 95, height: 95 };
       }
     });
@@ -113,7 +113,7 @@ export default function Main() {
           <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
             안녕하세요.
           </HelloName>
-          {showText && ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
+          {showText && ( // showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
             <MyName
               className="nameText"
               fontSize={fontSize}
