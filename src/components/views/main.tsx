@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 // 리액트 컴포넌트
 import RandomGradientColor from "../utils/color";
 import styles from "../../css/main.style";
-
+import { useRandomFontWeight, useRandomTextColor } from "../utils/customHooks";
 // * 본문
 
 // main div 스타일링
@@ -34,29 +34,9 @@ const MyName = styled.p<{ fontWeight: string; textColor: string }>`
 `;
 
 export default function Main() {
-  const [fontWeight, setFontWeight] = useState("bold");
-  const fontType: Array<string | number> = [
-    100, 200, 300, 400, 500, 600, 700, 800, 900,
-  ];
-  const [textColor, setTextColor] = useState(RandomGradientColor());
-
-  // main 텍스트의 굵기가 랜덤으로 변함
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const randomFontWeight = Math.floor(Math.random() * fontType.length);
-      const newFontWeight = String(fontType[randomFontWeight]);
-      setFontWeight(newFontWeight);
-    }, 1000);
-  }, []);
-
-  // main 텍스트의 색깔이 랜덤으로 변함
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTextColor(RandomGradientColor());
-    }, 5000);
-
-    return () => clearInterval(timer); // 타이머 정리
-  }, []);
+  const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+  const fontWeight = useRandomFontWeight(fontType);
+  const textColor = useRandomTextColor();
 
   return (
     <>
