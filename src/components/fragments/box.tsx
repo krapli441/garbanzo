@@ -1,5 +1,10 @@
+// 리액트 라이브러리
 import React from "react";
 import styled from "styled-components";
+// 리액트 컴포넌트
+
+// * 본문
+
 
 const Box = styled.div<{ width: number; height: number }>`
   display: flex;

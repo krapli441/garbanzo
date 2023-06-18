@@ -7,6 +7,8 @@ import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 // 리액트 컴포넌트
 import styles from "../../css/main.style";
 import { Box } from "../fragments/box";
+import Namebox from "./introduce";
+
 // * 본문
 
 // main div 스타일링
@@ -119,7 +121,7 @@ export default function Main() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {showText && ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
+          {showText ? ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
             <BoxContents className="boxContents">
               <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
                 안녕하세요.
@@ -137,6 +139,8 @@ export default function Main() {
                 입니다.
               </HelloName>
             </BoxContents>
+          ) : (
+            <Namebox />
           )}
         </Box>
       </MainStyle>
