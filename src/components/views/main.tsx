@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 // 리액트 컴포넌트
-import RandomGradientColor from "../utils/color";
 import styles from "../../css/main.style";
-import { useRandomFontWeight, useRandomTextColor } from "../utils/customHooks";
+import { useRandomTextColor } from "../Hooks/RandomColorHooks";
+import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 // * 본문
 
 // main div 스타일링
