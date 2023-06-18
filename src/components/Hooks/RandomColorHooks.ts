@@ -1,5 +1,3 @@
-// customHooks.ts
-
 import { useState, useEffect } from "react";
 import RandomGradientColor from "../utils/color";
 
