@@ -1,8 +1,5 @@
 import React from "react";
 import YouTube from "react-youtube";
-import dotenv from "dotenv";
-
-// dotenv.config({ path: "../../.env" });
 
 const VideoPlayer = () => {
   // YouTube 동영상 ID를 가져옵니다.
@@ -22,7 +19,14 @@ const VideoPlayer = () => {
   };
 
   return (
-    <YouTube videoId={videoId} opts={opts} onReady={onReady} key={videoId} />
+    <YouTube
+      className="player"
+      style={{ width: "100%", height: "50%" }}
+      videoId={videoId}
+      opts={opts}
+      onReady={onReady}
+      key={videoId}
+    />
   );
 };
 
