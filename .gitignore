@@ -1,2 +1,5 @@
 node_modules
 .DS_Store
+database.rules.json
+firebase.json
+.firebaserc

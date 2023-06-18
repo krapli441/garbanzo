@@ -1,29 +1,20 @@
-// 파이어베이스
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyD9bRdOmVS1arflDwbTJgM1ji0-Vt_JeHE",
-  authDomain: "krapli441portfolio.firebaseapp.com",
-  projectId: "krapli441portfolio",
-  storageBucket: "krapli441portfolio.appspot.com",
-  messagingSenderId: "154267580809",
-  appId: "1:154267580809:web:a00aa7160578f8aae48958",
-  measurementId: "G-JTBCG8GVM1",
-};
-
-const app = initializeApp(firebaseConfig);
 
 import express, { Request, Response } from "express";
 import path from "path";
 
+const root = path.join(__dirname, "..", ".."); //C:\Users\over9\KDT-2_FullStack\KDT-2-Project-A-5
+console.log(root);
+const rootPublic = path.join(root, "public");
+console.log(rootPublic);
+
 const server = express();
 
-server.use(express.static(path.join(__dirname)));
+server.use(express.static(path.join(__dirname, rootPublic)));
 
 server.get("*", (req: Request, res: Response) => {
   res.type("text/html");
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.sendFile(path.join(rootPublic, "index.html"));
 });
 // 404 페이지 작성
 server.use((req: Request, res: Response) => {
