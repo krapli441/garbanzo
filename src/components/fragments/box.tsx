@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 // * 본문
 
-
 const Box = styled.div<{ width: number; height: number }>`
   display: flex;
   flex-direction: column;
@@ -15,7 +14,6 @@ const Box = styled.div<{ width: number; height: number }>`
   justify-content: center;
   padding: 10px 20px;
   border: 2px solid white;
-  cursor: pointer;
   transition: 0.4s ease;
 `;
 

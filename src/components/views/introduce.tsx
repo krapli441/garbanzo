@@ -26,8 +26,22 @@ const MyIntroduceSecondArea = styled.div`
 `;
 
 const MyNameText = styled.p`
-  font-size: 52px;
+  font-size: 48px;
   color: white;
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox를 사용하여 내부 요소를 가운데 정렬합니다. */
+  justify-content: center; /* 가로 방향 가운데 정렬 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export default function NameBox() {
@@ -35,11 +49,17 @@ export default function NameBox() {
     <MyIntroduceBox className="introduceBox">
       <MyIntroduceFirstArea className="fisrt">
         <MyNameText>
-          다시 인사드립니다.<br></br>음악을 사랑하는 개발자 박준형입니다.
+          좋은 디자인이 곧 좋은 경험으로 이어진다는 믿음이 있기에<br></br>
+          UI, UX에 깊은 관심을 갖고 있습니다.<br></br>
+          인간에 대한 탐구를 즐겨 합니다.<br></br>
+          세상의 좋은 모든 음악들을 사랑합니다.<br></br>
+          
         </MyNameText>
       </MyIntroduceFirstArea>
       <MyIntroduceSecondArea className="second">
-        <MyProfile></MyProfile>
+        <ImageContainer>
+          <Image src={MyProfile} alt="본인" />
+        </ImageContainer>
       </MyIntroduceSecondArea>
     </MyIntroduceBox>
   );
