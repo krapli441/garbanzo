@@ -41,7 +41,7 @@ export default function Main() {
   return (
     <>
       <MainStyle className="main">
-        <Box>
+        <Box className="Box">
           안녕하세요.
           <MyName
             className="nameText"
