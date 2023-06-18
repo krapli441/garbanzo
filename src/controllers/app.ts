@@ -14,4 +14,25 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-import express from "express";
+import express, { Request, Response } from "express";
+import path from "path";
+
+const server = express();
+
+server.use(express.static(path.join(__dirname)));
+
+server.get("*", (req: Request, res: Response) => {
+  res.type("text/html");
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+// 404 페이지 작성
+server.use((req: Request, res: Response) => {
+  res.type("text/plain");
+  res.status(404);
+  res.send("404 - Not Found");
+});
+
+// 서버 포트 번호 이다.
+server.listen(8080, () => {
+  console.log(`연결 성공`);
+});
