@@ -39,6 +39,18 @@ const MyName = styled.p<{
   opacity: ${({ opacity }) => opacity};
 `;
 
+const HelloName = styled.p<{
+  fontSize: number;
+  opacity: number;
+}>`
+  font-size: ${({ fontSize }) => fontSize}px;
+  opacity: ${({ opacity }) => opacity};
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: ${({ opacity }) => `rgba(255, 255, 255, ${opacity})`};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
 export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
@@ -47,17 +59,28 @@ export default function Main() {
   const [boxSize, setBoxSize] = useState({ width: 8, height: 15 });
   const [opacity, setOpacity] = useState(1);
   const [fontSize, setFontSize] = useState(48);
+  const [helloFontSize, setHelloFontSize] = useState(14);
+  const [showText, setShowText] = useState(true);
+  const [helloOpacity, setHelloOpacity] = useState(1);
 
   // 클릭시 변경될 박스 크기
   const handleClick = () => {
     setBoxSize((prevSize) => {
       setOpacity(1);
+      setHelloOpacity(1);
       setFontSize(48);
+      setHelloFontSize(14);
+      setShowText(true);
       if (prevSize.width === 95 && prevSize.height === 95) {
         return { width: 8, height: 15 };
       } else {
+        setHelloFontSize(128);
+        setHelloOpacity(0);
         setOpacity(0);
         setFontSize(256);
+        setTimeout(() => {
+          setShowText(false);
+        }, 300); // 0.3초 후에 MyName 컴포넌트를 제거하기 위해 300ms로 설정합니다.
         return { width: 95, height: 95 };
       }
     });
@@ -87,17 +110,23 @@ export default function Main() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          안녕하세요.
-          <MyName
-            className="nameText"
-            fontSize={fontSize}
-            fontWeight={fontWeight}
-            textcolor={textcolor}
-            opacity={opacity}
-          >
-            박준형
-          </MyName>
-          입니다.
+          <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
+            안녕하세요.
+          </HelloName>
+          {showText && ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링합니다.
+            <MyName
+              className="nameText"
+              fontSize={fontSize}
+              fontWeight={fontWeight}
+              textcolor={textcolor}
+              opacity={opacity}
+            >
+              박준형
+            </MyName>
+          )}
+          <HelloName fontSize={helloFontSize} opacity={helloOpacity}>
+            입니다.
+          </HelloName>
         </Box>
       </MainStyle>
     </>
