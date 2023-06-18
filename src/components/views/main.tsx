@@ -37,11 +37,35 @@ export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
   const textcolor = useRandomTextColor();
+  const [boxSize, setBoxSize] = useState({ width: 8, height: 13 });
+
+  const handleClick = () => {
+    setBoxSize((prevSize) => {
+      if (prevSize.width === 95 && prevSize.height === 95) {
+        return { width: 8, height: 15 };
+      } else {
+        return { width: 95, height: 95 };
+      }
+    });
+  };
+  const handleMouseEnter = () => {
+    setBoxSize({ width: 9, height: 15 });
+  };
+
+  const handleMouseLeave = () => {
+    setBoxSize({ width: 8, height: 15 });
+  };
 
   return (
     <>
       <MainStyle className="main">
-        <Box>
+        <Box
+          width={boxSize.width}
+          height={boxSize.height}
+          onClick={handleClick}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           안녕하세요.
           <MyName
             className="nameText"

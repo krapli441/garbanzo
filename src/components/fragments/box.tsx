@@ -1,11 +1,11 @@
 import React, { useState, ReactNode } from "react";
 import styled from "styled-components";
 
-const Box = styled.div`
+const Box = styled.div<{ width: number; height: number }>`
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 200px;
+  width: ${({ width }) => width}%;
+  height: ${({ height }) => height}%;
   align-items: center;
   justify-content: center;
   color: #fff;
@@ -13,11 +13,6 @@ const Box = styled.div`
   border: 2px solid white;
   transition: 0.4s ease;
   cursor: pointer;
-  &:hover,
-  &:focus {
-    width: 220px;
-    height: 220px;
-  }
 `;
 
 export { Box };
