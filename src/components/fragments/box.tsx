@@ -20,12 +20,6 @@ const Box = styled.div`
   }
 `;
 
-type BoxProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-
 export default function ClickBox() {
   const [expand, setExpand] = useState(false);
 
