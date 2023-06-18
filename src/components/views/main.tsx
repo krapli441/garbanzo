@@ -37,8 +37,10 @@ export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
   const textcolor = useRandomTextColor();
-  const [boxSize, setBoxSize] = useState({ width: 8, height: 13 });
+  // 기본 박스 크기
+  const [boxSize, setBoxSize] = useState({ width: 8, height: 15 });
 
+  // 클릭시 변경될 박스 크기
   const handleClick = () => {
     setBoxSize((prevSize) => {
       if (prevSize.width === 95 && prevSize.height === 95) {
@@ -48,12 +50,19 @@ export default function Main() {
       }
     });
   };
+
+  // 마우스 Enter 시 변경될 박스 크기
   const handleMouseEnter = () => {
-    setBoxSize({ width: 9, height: 15 });
+    if (boxSize.width !== 95 && boxSize.height !== 95) {
+      setBoxSize({ width: 9, height: 18 });
+    }
   };
 
+  // 마우스 Leave 시 변경될 박스 크기
   const handleMouseLeave = () => {
-    setBoxSize({ width: 8, height: 15 });
+    if (boxSize.width !== 95 && boxSize.height !== 95) {
+      setBoxSize({ width: 8, height: 15 });
+    }
   };
 
   return (
