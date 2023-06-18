@@ -1,5 +1,5 @@
 // 리액트 라이브러리
-import React from "react";
+import React, { useEffect } from "react";
 import { render } from "react-dom";
 import { createRoot, Root } from "react-dom/client";
 import styled, { css } from "styled-components";
@@ -24,6 +24,10 @@ const Container = styled.div`
 `;
 
 export default function App() {
+  useEffect(() => {
+    document.title = "krapli's portfolio";
+  });
+
   return (
     <>
       <Container className="container">
