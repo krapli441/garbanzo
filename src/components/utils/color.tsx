@@ -7,8 +7,9 @@
 function RandomGradientColor() {
   const color1 = GenerateRandomHexColor();
   const color2 = GenerateRandomHexColor();
+  const color3 = GenerateRandomHexColor();
 
-  const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
+  const gradient = `linear-gradient(to right, ${color1}, ${color2}, ${color3})`;
 
   return gradient;
 }
