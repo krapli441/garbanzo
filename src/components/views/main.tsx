@@ -8,6 +8,7 @@ import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 import styles from "../../css/main.style";
 import { Box } from "../fragments/box";
 import Namebox from "./introduce";
+import { text } from "stream/consumers";
 
 // * 본문
 
@@ -19,9 +20,20 @@ const MainStyle = styled.div`
   height: 70vh;
 `;
 
-const MyName = styled.p`
-  font-size:24px;
-  font-family;
+const MyName = styled.p<{
+  fontWeight: string;
+  textcolor: string;
+  opacity: number;
+  fontSize: number;
+}>`
+  font-size: ${({ fontSize }) => fontSize}px;
+  font-weight: ${({ fontWeight }) => fontWeight};
+  background: ${({ textcolor }) => textcolor};
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: ${({ opacity }) => opacity};
 `;
 
 export default function Main() {
@@ -35,6 +47,15 @@ export default function Main() {
       <MainStyle className="main">
         <Box width={10} height={20}>
           안녕하세요.
+          <MyName
+            fontWeight={fontWeight}
+            textcolor={textcolor}
+            opacity={1}
+            fontSize={32}
+          >
+            박준형
+          </MyName>
+          입니다.
         </Box>
       </MainStyle>
     </>
