@@ -36,6 +36,18 @@ const MyName = styled.p<{
   opacity: ${({ opacity }) => opacity};
 `;
 
+const HelloName = styled.p<{
+  fontSize: number;
+  opacity: number;
+}>`
+  font-size: ${({ fontSize }) => fontSize}px;
+  opacity: ${({ opacity }) => opacity};
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: ${({ opacity }) => `rgba(255, 255, 255, ${opacity})`};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
 export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
@@ -46,16 +58,20 @@ export default function Main() {
     <>
       <MainStyle className="main">
         <Box width={10} height={20}>
-          안녕하세요.
+          <HelloName fontSize={22} opacity={1}>
+            안녕하세요.
+          </HelloName>
           <MyName
             fontWeight={fontWeight}
             textcolor={textcolor}
             opacity={1}
-            fontSize={32}
+            fontSize={50}
           >
             박준형
           </MyName>
-          입니다.
+          <HelloName fontSize={22} opacity={1}>
+            입니다.
+          </HelloName>
         </Box>
       </MainStyle>
     </>
