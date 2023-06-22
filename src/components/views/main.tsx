@@ -19,6 +19,11 @@ const MainStyle = styled.div`
   height: 70vh;
 `;
 
+const MyName = styled.p`
+  font-size:24px;
+  font-family;
+`;
+
 export default function Main() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
@@ -28,7 +33,9 @@ export default function Main() {
   return (
     <>
       <MainStyle className="main">
-        <Box width={10} height={20}></Box>
+        <Box width={10} height={20}>
+          안녕하세요.
+        </Box>
       </MainStyle>
     </>
   );
