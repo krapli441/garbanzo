@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export function useRandomFontWeight(fontType: Array<number>) {
   const [fontWeight, setFontWeight] = useState("bold");
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
