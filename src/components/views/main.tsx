@@ -1,5 +1,5 @@
 // 리액트 라이브러리, 훅스
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { useRandomTextColor } from "../Hooks/RandomColorHooks";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
@@ -71,15 +71,22 @@ export default function Main() {
   const [helloFontSize, setHelloFontSize] = useState(14);
   const [showText, setShowText] = useState(true);
   const [helloOpacity, setHelloOpacity] = useState(1);
+  const [clickable, setClickable] = useState(true);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // 클릭시 변경될 박스 크기
   const handleClick = () => {
+    if (!clickable) return;
+
+    setClickable(true); // 클릭 가능 상태를 비활성화
+
     setBoxSize((prevSize) => {
       setOpacity(1);
       setHelloOpacity(1);
       setFontSize(48);
       setHelloFontSize(14);
-      setShowText(true);
+
+      setShowText(!showText); // showText 값을 토글로 변경
 
       if (prevSize.width === 95 && prevSize.height === 95) {
         return { width: 8, height: 15 };
@@ -88,25 +95,30 @@ export default function Main() {
         setHelloOpacity(0);
         setOpacity(0);
         setFontSize(256);
-        setTimeout(() => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current); // 이전의 setTimeout을 취소
+        }
+        timeoutRef.current = setTimeout(() => {
           setShowText(false);
+          setClickable(true); // 클릭 가능 상태로 변경
         }, 300); // 0.3초 후에 MyName 컴포넌트를 제거
 
         return { width: 95, height: 95 };
       }
     });
   };
-
   // 마우스 Enter 시 변경될 박스 크기
   const handleMouseEnter = () => {
-    if (boxSize.width !== 95 && boxSize.height !== 95) {
+    if (boxSize.width !== 95 || boxSize.height !== 95) {
+      // 논리 연산자를 OR로 변경
       setBoxSize({ width: 15, height: 24 });
     }
   };
 
   // 마우스 Leave 시 변경될 박스 크기
   const handleMouseLeave = () => {
-    if (boxSize.width !== 95 && boxSize.height !== 95) {
+    if (boxSize.width !== 95 || boxSize.height !== 95) {
+      // 논리 연산자를 OR로 변경
       setBoxSize({ width: 12, height: 18 });
     }
   };
