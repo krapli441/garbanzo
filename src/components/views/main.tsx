@@ -29,7 +29,20 @@ const MyName = styled.p<{
   font-size: ${({ fontSize }) => fontSize}px;
   font-weight: ${({ fontWeight }) => fontWeight};
   background: ${({ textcolor }) => textcolor};
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: colorTransition 5s infinite;
+
+  @keyframes colorTransition {
+    0% {
+      background-position: 0%;
+    }
+    50% {
+      background-position: 50%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
