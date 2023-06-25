@@ -1,6 +1,6 @@
 // 리액트 라이브러리
 import React from "react";
-import styled from "styled-components";
+
 import { Box, Image, Text } from "@chakra-ui/react";
 // 리액트 컴포넌트
 
@@ -16,9 +16,7 @@ const userInfo = navigator.userAgent;
 export default function AccessUserInformation() {
   return (
     <>
-
-        <Text className="accessUser">{userInfo}</Text>
-
+      <Text className="accessUser" fontSize={12}>{userInfo}</Text>
     </>
   );
 }

@@ -1,14 +1,11 @@
 // 리액트 라이브러리
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+
+import { Box, Image, Text } from "@chakra-ui/react";
 
 // 리액트 컴포넌트
 
 // * 본문
-
-const MouseText = styled.div`
-  font-size: 12px;
-`;
 
 export default function MouseTracking() {
   const [mouseX, setMouseX] = useState(0);
@@ -30,9 +27,9 @@ export default function MouseTracking() {
 
   return (
     <>
-      <MouseText>
+      <Text className="mouseTracking" fontSize={12}>
         {mouseX}px, {mouseY}px
-      </MouseText>
+      </Text>
     </>
   );
 }
