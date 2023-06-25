@@ -25,7 +25,8 @@ export default function App() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      backgroundColor="blackAlpha.300"
+      backgroundColor="blackAlpha.800"
+      color={"white"}
     >
       <Header />
       <Main />
