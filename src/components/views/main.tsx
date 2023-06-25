@@ -30,7 +30,7 @@ const MyName = styled.p<{
   font-weight: ${({ fontWeight }) => fontWeight};
   background: ${({ textcolor }) => textcolor};
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  animation: colorTransition 5s infinite;
+  animation: colorTransition 1s infinite;
 
   @keyframes colorTransition {
     0% {
@@ -62,15 +62,34 @@ const HelloName = styled.p<{
 `;
 
 export default function Main() {
-  const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+  // 글씨체 굵기 배열
+  const fontType: Array<number> = [100, 300, 500, 700, 900];
   const fontWeight = useRandomFontWeight(fontType);
+  // 박준형 폰트 색상을 랜덤으로 생성하는 함수
   const textcolor = useRandomTextColor();
-  // 기본 박스 크기
+
+  // 박준형 이름 박스 클릭 이벤트
+  const [isBoxClicked, setIsBoxClicked] = useState(false);
+  const [boxSize, setBoxSize] = useState({ width: 10, height: 20 });
+
+  const handleBoxClick = () => {
+    setIsBoxClicked((prevClicked) => !prevClicked);
+    if (isBoxClicked) {
+      setBoxSize({ width: 10, height: 20 }); // 원래 크기
+    } else {
+      setBoxSize({ width: 95, height: 95 }); // 변경될 크기
+    }
+  };
 
   return (
     <>
       <MainStyle className="main">
-        <Box width={10} height={20}>
+        <Box
+          width={boxSize.width}
+          height={boxSize.height}
+          onClick={handleBoxClick}
+          className="clickBox"
+        >
           <HelloName fontSize={22} opacity={1}>
             안녕하세요.
           </HelloName>

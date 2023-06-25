@@ -7,7 +7,7 @@ export function useRandomTextColor() {
   useEffect(() => {
     const timer = setInterval(() => {
       setTextColor(RandomGradientColor());
-    }, 5000);
+    }, 1000);
 
     return () => clearInterval(timer);
   }, []);
