@@ -51,11 +51,16 @@ export default function NameBox() {
     <MyIntroduceBox className="introduceBox">
       <MyIntroduceFirstArea className="fisrt">
         <MyNameText>
-          좋은 디자인이 곧 좋은 경험으로 이어진다고 믿습니다.<br></br>
-          UI, UX에 깊은 관심을 갖고 있습니다.<br></br>
-          인간에 대한 탐구를 즐겨 합니다.<br></br>
-          세상의 좋은 모든 음악들을 사랑합니다.<br></br>
-          여유가 있을 때 음악을 틀며 스트레스를 풉니다.<br></br>
+          좋은 디자인이 곧 좋은 경험으로 이어진다고 믿습니다.
+          <br />
+          UI, UX에 깊은 관심을 갖고 있습니다.
+          <br />
+          인간에 대한 탐구를 즐겨 합니다.
+          <br />
+          세상의 좋은 모든 음악들을 사랑합니다.
+          <br />
+          여유가 있을 때 음악을 틀며 스트레스를 풉니다.
+          <br />
         </MyNameText>
       </MyIntroduceFirstArea>
       <MyIntroduceSecondArea className="second">

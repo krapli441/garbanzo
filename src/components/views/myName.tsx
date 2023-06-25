@@ -51,7 +51,7 @@ const TextContainer = styled.div`
   flex-direction: column;
 `;
 
-export const BoxContent = ({ isVisible }: { isVisible: boolean }) => {
+export const BoxContent = ({ isBoxClicked }: { isBoxClicked: boolean }) => {
   const fontType: Array<number> = [100, 300, 500, 700, 900];
   const fontWeight = useRandomFontWeight(fontType);
   const textcolor = useRandomTextColor();

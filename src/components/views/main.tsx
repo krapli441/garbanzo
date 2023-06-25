@@ -1,8 +1,6 @@
 // 리액트 라이브러리, 훅스
 import React, { useState, useRef } from "react";
-import styled, { keyframes } from "styled-components";
-import { useRandomTextColor } from "../Hooks/RandomColorHooks";
-import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
+import styled from "styled-components";
 
 // 리액트 컴포넌트
 import { Box } from "../fragments/box";
@@ -19,12 +17,6 @@ const MainStyle = styled.div`
 `;
 
 export default function Main() {
-  // 글씨체 굵기 배열
-  const fontType: Array<number> = [100, 300, 500, 700, 900];
-  const fontWeight = useRandomFontWeight(fontType);
-  // 박준형 폰트 색상을 랜덤으로 생성하는 함수
-  const textcolor = useRandomTextColor();
-
   // 박준형 이름 박스 클릭 이벤트
   const [isBoxClicked, setIsBoxClicked] = useState(false);
   const [boxSize, setBoxSize] = useState({ width: 10, height: 20 });
@@ -47,7 +39,7 @@ export default function Main() {
           onClick={handleBoxClick}
           className="clickBox"
         >
-          {!isBoxClicked && <BoxContent isVisible={!isBoxClicked} />}
+          {!isBoxClicked && <BoxContent isBoxClicked={!isBoxClicked} />}
         </Box>
       </MainStyle>
     </>
