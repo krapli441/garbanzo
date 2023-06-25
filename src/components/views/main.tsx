@@ -61,6 +61,12 @@ const HelloName = styled.p<{
   -webkit-text-fill-color: transparent;
 `;
 
+const TextContainer = styled.div<{ isVisible: boolean }>`
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  align-items: center;
+  flex-direction: column;
+`;
+
 export default function Main() {
   // 글씨체 굵기 배열
   const fontType: Array<number> = [100, 300, 500, 700, 900];
@@ -90,20 +96,22 @@ export default function Main() {
           onClick={handleBoxClick}
           className="clickBox"
         >
-          <HelloName fontSize={22} opacity={1}>
-            안녕하세요.
-          </HelloName>
-          <MyName
-            fontWeight={fontWeight}
-            textcolor={textcolor}
-            opacity={1}
-            fontSize={50}
-          >
-            박준형
-          </MyName>
-          <HelloName fontSize={22} opacity={1}>
-            입니다.
-          </HelloName>
+          <TextContainer isVisible={!isBoxClicked}>
+            <HelloName fontSize={22} opacity={1}>
+              안녕하세요.
+            </HelloName>
+            <MyName
+              fontWeight={fontWeight}
+              textcolor={textcolor}
+              opacity={1}
+              fontSize={50}
+            >
+              박준형
+            </MyName>
+            <HelloName fontSize={22} opacity={1}>
+              입니다.
+            </HelloName>
+          </TextContainer>
         </Box>
       </MainStyle>
     </>
