@@ -7,6 +7,8 @@ import { motion, isValidMotionProp } from "framer-motion";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 import { useRandomTextColor } from "../Hooks/RandomColorHooks";
 
+// css
+
 export default function myNameBox() {
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
@@ -32,6 +34,7 @@ export default function myNameBox() {
         fontWeight={fontWeight}
         bgGradient={textcolor}
         bgClip={"text"}
+        transition={"0.2s ease"}
       >
         박준형
       </Text>
