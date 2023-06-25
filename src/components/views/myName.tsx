@@ -24,8 +24,8 @@ export default function myNameBox() {
       height={"15%"}
       border={"2px solid white"}
       _hover={{
-        width: "15%",
-        height: "23%",
+        width: "13%",
+        height: "18%",
       }}
       transition={"0.4s cubic-bezier(.14,.65,.66,.97)"}
       cursor={"pointer"}
