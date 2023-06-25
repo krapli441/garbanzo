@@ -8,7 +8,7 @@ import Bottom from "./components/views/bottom";
 import { Box, Image, Text } from "@chakra-ui/react";
 
 // css
-// import "./css/root.css";
+import "./css/root.css";
 
 export default function App() {
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function App() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      backgroundColor="blackAlpha.800"
+      backgroundColor="blackAlpha.900"
       color={"white"}
     >
       <Header />
