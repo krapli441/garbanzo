@@ -97,23 +97,23 @@ export default function Main() {
     });
   };
 
-  // 마우스 Enter 시 변경될 박스 크기
-  const handleMouseEnter = (e:React.MouseEvent) => {
+  const handleMouseEnter = (e: React.MouseEvent) => {
     if (boxSize.width !== 95 && boxSize.height !== 95 && showText) {
       e.preventDefault();
       setBoxSize({ width: 14, height: 20 });
-      console.log('마우스 들어옴')
+      console.log("마우스 들어옴");
     }
   };
 
-  // 마우스 Leave 시 변경될 박스 크기
-  const handleMouseLeave = (e:React.MouseEvent) => {
-    if (boxSize.width !== 95 && boxSize.height !== 95 && showText) {
-      e.preventDefault();
-      setBoxSize({ width: 12, height: 18 });
-      console.log('마우스 나감')
-    }
-  };
+// 마우스 Leave 시 변경될 박스 크기
+const handleMouseLeave = (e:React.MouseEvent) => {
+  if (boxSize.width !== 95 && boxSize.height !== 95) {
+    e.preventDefault();
+    setBoxSize({ width: 12, height: 18 });
+    console.log('마우스 나감')
+    // 마우스가 박스 위에 있으면 `handleMouseLeave` 이벤트를 무시한다.
+  }
+};
 
   return (
     <>
