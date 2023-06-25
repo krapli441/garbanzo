@@ -2,8 +2,7 @@
 import React from "react";
 
 // 리액트 컴포넌트
-import { Box, Image, Text, chakra } from "@chakra-ui/react";
-import { motion, isValidMotionProp } from "framer-motion";
+import { Box, Text } from "@chakra-ui/react";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 import { useRandomTextColor } from "../Hooks/RandomColorHooks";
 
@@ -21,14 +20,15 @@ export default function myNameBox() {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
-      width={"12%"}
-      height={"18%"}
+      width={"10%"}
+      height={"15%"}
       border={"2px solid white"}
       _hover={{
         width: "15%",
-        height: "22%",
+        height: "23%",
       }}
-      transition={"0.2s cubic-bezier(.14,.65,.66,.97)"}
+      transition={"0.4s cubic-bezier(.14,.65,.66,.97)"}
+      cursor={"pointer"}
     >
       <Text className="greetingText" fontSize={14}>
         안녕하세요.
