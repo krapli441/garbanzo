@@ -24,6 +24,11 @@ export default function myNameBox() {
       width={"12%"}
       height={"18%"}
       border={"2px solid white"}
+      _hover={{
+        width: "15%",
+        height: "22%",
+      }}
+      transition={"0.2s cubic-bezier(.14,.65,.66,.97)"}
     >
       <Text className="greetingText" fontSize={14}>
         안녕하세요.
