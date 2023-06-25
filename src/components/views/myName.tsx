@@ -45,10 +45,10 @@ const HelloName = styled.p<{
   -webkit-text-fill-color: transparent;
 `;
 
-const TextContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+const TextContainer = styled.div<{ isBoxClicked: boolean }>`
+  /* 스타일 설정 */
+  opacity: ${({ isBoxClicked }) => (isBoxClicked ? 1 : 0)};
+  transition: opacity 0.3s ease-in-out;
 `;
 
 export const BoxContent = ({ isBoxClicked }: { isBoxClicked: boolean }) => {
@@ -57,7 +57,7 @@ export const BoxContent = ({ isBoxClicked }: { isBoxClicked: boolean }) => {
   const textcolor = useRandomTextColor();
 
   return (
-    <TextContainer className="nameBox">
+    <TextContainer className="nameBox" isBoxClicked={isBoxClicked}>
       <HelloName fontSize={22} opacity={1}>
         안녕하세요.
       </HelloName>
