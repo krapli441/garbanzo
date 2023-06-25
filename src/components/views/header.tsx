@@ -1,38 +1,18 @@
 // 리액트 라이브러리
 import React from "react";
-import styled from "styled-components";
 
 // 리액트 컴포넌트
-import UserInformation from "../utils/userInfo";
-import MouseTracking from "../utils/mouse";
+import { Box, Image, Text } from "@chakra-ui/react";
+import Userinformation from "../utils/userInfo";
+// import MouseTracking from "../utils/mouse";
 
-// * 본문
-
-const HeaderStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100vw;
-  height: 10vh;
-  color: white;
-  margin-right: 120px;
-  margin-top: 20px;
-`;
-
-const HeaderTitleStyle = styled.div`
-  font-size: 32px;
-`;
-
-export default function Header() {
+export default function main() {
   return (
     <>
-      <HeaderStyle className="header">
-        <HeaderTitleStyle className="headerTitle">
-          krapli's portpolio
-        </HeaderTitleStyle>
-        <UserInformation></UserInformation>
-        <MouseTracking></MouseTracking>
-      </HeaderStyle>
+      <Box className="header" width={"100%"} height={"10vh"}>
+        <Text>Krapli's Portfolio</Text>
+          <Userinformation />
+      </Box>
     </>
   );
 }

@@ -35,5 +35,12 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".jpg"],
+    fallback: {
+      crypto: require.resolve("crypto-browserify"),
+      buffer: require.resolve("buffer/"),
+      stream: require.resolve("stream-browserify"),
+      path: require.resolve("path-browserify"),
+      os: require.resolve("os-browserify/browser"),
+    },
   },
 };

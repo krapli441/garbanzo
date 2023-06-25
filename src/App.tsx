@@ -1,27 +1,14 @@
 // 리액트 라이브러리
 import React, { useEffect } from "react";
-import { render } from "react-dom";
-import { createRoot, Root } from "react-dom/client";
-import styled, { css } from "styled-components";
 
 // 리액트 컴포넌트
 import Header from "./components/views/header";
 import Main from "./components/views/main";
 import Bottom from "./components/views/bottom";
+import { Box, Image, Text } from "@chakra-ui/react";
 
 // css
-import "./css/root.css";
-
-// container 스타일링
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  align-items: center;
-  justify-content: center;
-`;
+// import "./css/root.css";
 
 export default function App() {
   useEffect(() => {
@@ -29,12 +16,20 @@ export default function App() {
   });
 
   return (
-    <>
-      <Container className="container">
-        <Header />
-        <Main />
-        <Bottom />
-      </Container>
-    </>
+    <Box
+      className="container"
+      width="100%"
+      height="100vh"
+      mx="auto"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      backgroundColor="blackAlpha.300"
+    >
+      <Header />
+      <Main />
+      <Bottom />
+    </Box>
   );
 }
