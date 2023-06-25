@@ -39,7 +39,7 @@ export default function myNameBox() {
         fontWeight={fontWeight}
         bgGradient={textcolor}
         bgClip={"text"}
-        transition={"0.2s ease"}
+        transition={"all 0.2s ease"}
       >
         박준형
       </Text>
