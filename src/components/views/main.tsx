@@ -98,16 +98,20 @@ export default function Main() {
   };
 
   // 마우스 Enter 시 변경될 박스 크기
-  const handleMouseEnter = () => {
-    if (boxSize.width !== 95 && boxSize.height !== 95) {
-      setBoxSize({ width: 15, height: 24 });
+  const handleMouseEnter = (e:React.MouseEvent) => {
+    if (boxSize.width !== 95 && boxSize.height !== 95 && showText) {
+      e.preventDefault();
+      setBoxSize({ width: 14, height: 20 });
+      console.log('마우스 들어옴')
     }
   };
 
   // 마우스 Leave 시 변경될 박스 크기
-  const handleMouseLeave = () => {
-    if (boxSize.width !== 95 && boxSize.height !== 95) {
+  const handleMouseLeave = (e:React.MouseEvent) => {
+    if (boxSize.width !== 95 && boxSize.height !== 95 && showText) {
+      e.preventDefault();
       setBoxSize({ width: 12, height: 18 });
+      console.log('마우스 나감')
     }
   };
 
@@ -120,6 +124,7 @@ export default function Main() {
           onClick={handleClick}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          className="myNameContentsBOx"
         >
           {showText ? ( // 조건부 렌더링을 사용하여 showText 값이 true일 때만 MyName 컴포넌트를 렌더링한다.
             <BoxContents className="boxContents">
