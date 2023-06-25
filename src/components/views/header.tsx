@@ -1,5 +1,5 @@
 // 리액트 라이브러리
-import React from "react";
+import React, { useState } from "react";
 
 // 리액트 컴포넌트
 import { Box, Image, Text } from "@chakra-ui/react";
@@ -20,7 +20,9 @@ export default function main() {
         marginRight={"120px"}
         marginTop={"20px"}
       >
-        <Text className={"pageTitle"}fontSize={32}>krapli's Portfolio</Text>
+        <Text className={"pageTitle"} fontSize={32}>
+          krapli's Portfolio
+        </Text>
         <Userinformation />
         <MouseTracking />
       </Box>
