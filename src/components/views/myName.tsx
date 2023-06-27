@@ -1,5 +1,5 @@
 // 리액트 라이브러리
-import React from "react";
+import React, { useState } from "react";
 
 // 리액트 컴포넌트
 import { Box, Text } from "@chakra-ui/react";
@@ -9,9 +9,27 @@ import { useRandomTextColor } from "../Hooks/RandomColorHooks";
 // css
 
 export default function myNameBox() {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
   const textcolor = useRandomTextColor();
+
+  const handleClick = () => {
+    console.log("클릭 감지");
+    setIsClicked(!isClicked);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const boxWidth = isClicked ? "90vw" : "13vw";
+  const boxHeight = isClicked ? "90vh" : "15vh";
 
   return (
     <Box
@@ -20,15 +38,22 @@ export default function myNameBox() {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
-      width={"10%"}
-      height={"20%"}
+      width={boxWidth}
+      height={boxHeight}
       border={"2px solid white"}
-      _hover={{
-        width: "13%",
-        height: "25%",
-      }}
+      _hover={
+        isClicked
+          ? {}
+          : {
+              width: "15vw",
+              height: "17vh",
+            }
+      }
       transition={"0.4s cubic-bezier(.14,.65,.66,.97)"}
       cursor={"pointer"}
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <Text className="greetingText" fontSize={14}>
         안녕하세요.
