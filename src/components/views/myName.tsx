@@ -28,8 +28,8 @@ export default function myNameBox() {
     setIsHovered(false);
   };
 
-  const boxWidth = isClicked ? "90vw" : "13vw";
-  const boxHeight = isClicked ? "90vh" : "15vh";
+  const boxWidth = isClicked ? "90%" : "10%";
+  const boxHeight = isClicked ? "90%" : "17%";
 
   return (
     <Box
@@ -45,8 +45,8 @@ export default function myNameBox() {
         isClicked
           ? {}
           : {
-              width: "15vw",
-              height: "17vh",
+              width: "15%",
+              height: "23%",
             }
       }
       transition={"0.4s cubic-bezier(.14,.65,.66,.97)"}
