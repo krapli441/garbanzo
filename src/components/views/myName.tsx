@@ -21,11 +21,11 @@ export default function myNameBox() {
       justifyContent={"center"}
       alignItems={"center"}
       width={"10%"}
-      height={"15%"}
+      height={"20%"}
       border={"2px solid white"}
       _hover={{
         width: "13%",
-        height: "18%",
+        height: "25%",
       }}
       transition={"0.4s cubic-bezier(.14,.65,.66,.97)"}
       cursor={"pointer"}
