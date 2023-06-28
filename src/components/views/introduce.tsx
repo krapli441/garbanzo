@@ -1,8 +1,11 @@
 // 리액트 라이브러리
 import React from "react";
 import { Box, Text, Image } from "@chakra-ui/react";
+import YouTube from "react-youtube";
+
 // 리액트 컴포넌트
 import MyProfile from "../../img/me.jpg";
+import VideoPlayer from "../utils/Youtube";
 
 <Box className="introduceBox">
   <Box className="fisrt">

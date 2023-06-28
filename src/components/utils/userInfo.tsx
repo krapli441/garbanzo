@@ -16,7 +16,9 @@ const userInfo = navigator.userAgent;
 export default function AccessUserInformation() {
   return (
     <>
-      <Text className="accessUser" fontSize={12}>{userInfo}</Text>
+      <Text className="accessUser" fontSize={12}>
+        {userInfo}
+      </Text>
     </>
   );
 }
