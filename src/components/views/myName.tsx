@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
 import { useRandomTextColor } from "../Hooks/RandomColorHooks";
+import Introduce from "./introduce";
 
 // css
 
@@ -15,9 +16,11 @@ export default function myNameBox() {
   const fontWeight = useRandomFontWeight(fontType);
   const textcolor = useRandomTextColor();
 
+  const [showIntroduce, setShowIntroduce] = useState(false);
+
   const handleClick = () => {
-    console.log("클릭 감지");
     setIsClicked(!isClicked);
+    setShowIntroduce(!showIntroduce);
   };
 
   const handleMouseEnter = () => {
@@ -91,6 +94,9 @@ export default function myNameBox() {
       >
         입니다.
       </Text>
+      {showIntroduce && <Introduce />}
+      {/*showIntroduce 값이 true일 때만
+      introduce.tsx 렌더링 */}
     </Box>
   );
 }
