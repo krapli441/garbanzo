@@ -17,7 +17,7 @@ export default function main() {
         flexDirection={"column"}
         justifyContent={"center"}
         alignItems={"flex-end"}
-        marginRight={"120px"}
+        marginRight={"10%"}
         marginTop={"20px"}
       >
         <Text className={"pageTitle"} fontSize={32}>

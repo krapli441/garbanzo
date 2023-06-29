@@ -1,5 +1,5 @@
 // 리액트 라이브러리
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // 리액트 컴포넌트
 import { Box, Text } from "@chakra-ui/react";
@@ -17,11 +17,35 @@ export default function myNameBox() {
   const textcolor = useRandomTextColor();
 
   const [showIntroduce, setShowIntroduce] = useState(false);
+  const [showText, setShowText] = useState(true);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
-    setShowIntroduce(!showIntroduce);
   };
+
+  useEffect(() => {
+    if (isClicked) {
+      const timer = setTimeout(() => {
+        setShowIntroduce(true);
+      }, 400); // 애니메이션 효과가 끝난 후 Introduce 컴포넌트를 보여줄 시간 (400ms로 설정)
+
+      return () => clearTimeout(timer); // 컴포넌트가 언마운트되면 타이머를 정리하여 메모리 누수 방지
+    } else {
+      setShowIntroduce(false);
+    }
+  }, [isClicked]);
+
+  useEffect(() => {
+    if (isClicked) {
+      const timer = setTimeout(() => {
+        setShowText(false);
+      }, 400); // 0.4초 후에 텍스트를 사라지게 함
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowText(true);
+    }
+  }, [isClicked]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -58,9 +82,17 @@ export default function myNameBox() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {!isClicked && (
+      {showText &&  (
         <>
-          <Text className="greetingText" fontSize={14}>
+          <Text
+            className="greetingText"
+            fontSize={14}
+            transition={"all 0.2s ease"}
+            opacity={isClicked ? 0 : 1}
+            style={{
+              transform: isClicked ? "scale(0)" : "scale(1)",
+            }}
+          >
             안녕하세요.
           </Text>
           <Text
@@ -69,10 +101,23 @@ export default function myNameBox() {
             fontWeight={fontWeight}
             bgGradient={textcolor}
             bgClip={"text"}
+            transition={"all 0.2s ease"}
+            opacity={isClicked ? 0 : 1}
+            style={{
+              transform: isClicked ? "scale(8)" : "scale(1)",
+            }}
           >
             박준형
           </Text>
-          <Text className="greetingText" fontSize={14}>
+          <Text
+            className="greetingText"
+            fontSize={14}
+            transition={"all 0.2s ease"}
+            opacity={isClicked ? 0 : 1}
+            style={{
+              transform: isClicked ? "scale(0)" : "scale(1)",
+            }}
+          >
             입니다.
           </Text>
         </>
