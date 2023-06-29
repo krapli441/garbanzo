@@ -9,8 +9,13 @@ import VideoPlayer from "../utils/Youtube";
 
 const Introduce: React.FC = () => {
   return (
-    <Box className="introduceBox">
-      <Box className="fisrt">
+    <Box
+      className="introduceBox"
+      width={"100%"}
+      height={"100%"}
+      display={"flex"}
+    >
+      <Box className="fisrt" width={"50%"} height={"100%"}>
         <Text>
           좋은 디자인이 곧 좋은 경험으로 이어진다고 믿습니다.<br></br>
           UI, UX에 깊은 관심을 갖고 있습니다.<br></br>
@@ -19,10 +24,10 @@ const Introduce: React.FC = () => {
           여유가 있을 때 음악을 틀며 스트레스를 풉니다.<br></br>
         </Text>
       </Box>
-      <Box className="second">
+      <Box className="second" width={"50%"} height={"100%"}>
+        <VideoPlayer />
         <Box className="imageContainer">
-          <VideoPlayer></VideoPlayer>
-          <Image src={MyProfile} alt="본인" />
+          <Image src={MyProfile} alt="본인" boxSize={"50%"} />
         </Box>
       </Box>
     </Box>

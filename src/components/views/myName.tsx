@@ -58,42 +58,25 @@ export default function myNameBox() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Text
-        className="greetingText"
-        fontSize={14}
-        transition={"all 0.2s ease"}
-        opacity={isClicked ? 0 : 1}
-        style={{
-          transform: isClicked ? "scale(0)" : "scale(1)",
-        }}
-      >
-        안녕하세요.
-      </Text>
-      <Text
-        className="myNameText"
-        fontSize={48}
-        fontWeight={fontWeight}
-        bgGradient={textcolor}
-        bgClip={"text"}
-        transition={"all 0.2s ease"}
-        opacity={isClicked ? 0 : 1}
-        style={{
-          transform: isClicked ? "scale(8)" : "scale(1)",
-        }}
-      >
-        박준형
-      </Text>
-      <Text
-        className="greetingText"
-        fontSize={14}
-        transition={"all 0.2s ease"}
-        opacity={isClicked ? 0 : 1}
-        style={{
-          transform: isClicked ? "scale(0)" : "scale(1)",
-        }}
-      >
-        입니다.
-      </Text>
+      {!isClicked && (
+        <>
+          <Text className="greetingText" fontSize={14}>
+            안녕하세요.
+          </Text>
+          <Text
+            className="myNameText"
+            fontSize={48}
+            fontWeight={fontWeight}
+            bgGradient={textcolor}
+            bgClip={"text"}
+          >
+            박준형
+          </Text>
+          <Text className="greetingText" fontSize={14}>
+            입니다.
+          </Text>
+        </>
+      )}
       {showIntroduce && <Introduce />}
       {/*showIntroduce 값이 true일 때만
       introduce.tsx 렌더링 */}
