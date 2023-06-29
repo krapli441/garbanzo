@@ -14,7 +14,7 @@ export default function myNameBox() {
   const [isClicked, setIsClicked] = useState(false);
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   const fontWeight = useRandomFontWeight(fontType);
-  const textcolor = useRandomTextColor();
+  const textColor = useRandomTextColor();
 
   const [showIntroduce, setShowIntroduce] = useState(false);
   const [showText, setShowText] = useState(true);
@@ -82,7 +82,7 @@ export default function myNameBox() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {showText &&  (
+      {showText && (
         <>
           <Text
             className="greetingText"
@@ -99,7 +99,7 @@ export default function myNameBox() {
             className="myNameText"
             fontSize={48}
             fontWeight={fontWeight}
-            bgGradient={textcolor}
+            bgGradient={textColor}
             bgClip={"text"}
             transition={"all 0.2s ease"}
             opacity={isClicked ? 0 : 1}

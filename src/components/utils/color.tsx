@@ -1,4 +1,5 @@
 // 리액트 라이브러리
+import React, { useState, useEffect } from "react";
 
 // 리액트 컴포넌트
 
