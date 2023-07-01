@@ -26,6 +26,7 @@ export default function myNameBox() {
   useEffect(() => {
     if (isClicked) {
       const timer = setTimeout(() => {
+        setShowText(true);
         setShowIntroduce(true);
       }, 400); // 애니메이션 효과가 끝난 후 Introduce 컴포넌트를 보여줄 시간 (400ms로 설정)
 
@@ -43,7 +44,9 @@ export default function myNameBox() {
 
       return () => clearTimeout(timer);
     } else {
-      setShowText(true);
+      const timer = setTimeout(() => {
+        setShowText(true);
+      }, 400);
     }
   }, [isClicked]);
 
@@ -82,7 +85,7 @@ export default function myNameBox() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {showText &&  (
+      {showText && (
         <>
           <Text
             className="greetingText"
