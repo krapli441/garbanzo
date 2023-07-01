@@ -26,11 +26,10 @@ export default function myNameBox() {
   useEffect(() => {
     if (isClicked) {
       const timer = setTimeout(() => {
-        setShowText(true);
         setShowIntroduce(true);
-      }, 400); // 애니메이션 효과가 끝난 후 Introduce 컴포넌트를 보여줄 시간 (400ms로 설정)
+      }, 400);
 
-      return () => clearTimeout(timer); // 컴포넌트가 언마운트되면 타이머를 정리하여 메모리 누수 방지
+      return () => clearTimeout(timer);
     } else {
       setShowIntroduce(false);
     }
@@ -40,13 +39,14 @@ export default function myNameBox() {
     if (isClicked) {
       const timer = setTimeout(() => {
         setShowText(false);
-      }, 400); // 0.4초 후에 텍스트를 사라지게 함
+      }, 400);
 
       return () => clearTimeout(timer);
     } else {
       const timer = setTimeout(() => {
         setShowText(true);
       }, 600);
+      return () => clearTimeout(timer);
     }
   }, [isClicked]);
 
