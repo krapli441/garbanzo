@@ -46,7 +46,7 @@ export default function myNameBox() {
     } else {
       const timer = setTimeout(() => {
         setShowText(true);
-      }, 400);
+      }, 600);
     }
   }, [isClicked]);
 
