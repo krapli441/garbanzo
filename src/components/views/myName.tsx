@@ -79,7 +79,7 @@ export default function myNameBox() {
               height: "23%",
             }
       }
-      transition={"0.4s cubic-bezier(.14,.65,.66,.97)"}
+      transition={"all 0.4s cubic-bezier(.14,.65,.66,.97)"}
       cursor={"pointer"}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}

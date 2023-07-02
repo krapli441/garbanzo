@@ -1,13 +1,22 @@
 // 리액트 라이브러리
-import React from "react";
+import React, { useState } from "react";
 import { Box, Text, Image, Highlight, Heading } from "@chakra-ui/react";
 import YouTube from "react-youtube";
 
 // 리액트 컴포넌트
 import MyProfile from "../../img/me.jpg";
+import poppy from "../../img/poppy.jpg"
 import VideoPlayer from "../utils/Youtube";
 
 const Introduce: React.FC = () => {
+  const [currentImage, setCurrentImage] = useState(MyProfile); // 현재 보여지는 이미지의 상태
+
+  const handleMouseEnter = (event: React.MouseEvent<HTMLImageElement>) => {
+    const newImageSrc = event.currentTarget.getAttribute("data-image-src");
+    if (newImageSrc) {
+      setCurrentImage(newImageSrc); // 이미지 교체
+    }
+  };
   return (
     <Box
       className="introduceBox"
@@ -75,8 +84,20 @@ const Introduce: React.FC = () => {
           display={"flex"}
           flexWrap={"wrap"}
         >
-          <Image src={MyProfile} alt="본인" boxSize={"50%"} />
-          <Image src={MyProfile} alt="본인" boxSize={"50%"} />
+          <Image
+            src={MyProfile}
+            alt="본인"
+            boxSize={"50%"}
+            data-image-src={MyProfile} // 속성을 사용하여 원래 이미지 경로를 저장
+            onMouseEnter={handleMouseEnter} // 마우스가 올라갈 때 이벤트 핸들러 호출
+          />
+          <Image
+            src={MyProfile}
+            alt="본인"
+            boxSize={"50%"}
+            data-image-src={poppy} // 다른 이미지의 경로를 저장
+            onMouseEnter={handleMouseEnter} // 마우스가 올라갈 때 이벤트 핸들러 호출
+          />
           <Image src={MyProfile} alt="본인" boxSize={"50%"} />
           <Image src={MyProfile} alt="본인" boxSize={"50%"} />
         </Box>
