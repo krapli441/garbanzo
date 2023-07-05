@@ -5,7 +5,11 @@ import YouTube from "react-youtube";
 
 // 리액트 컴포넌트
 import MyProfile from "../../img/me.jpg";
-import poppy from "../../img/poppy.jpg"
+import AfterOne from "../../img/afterOne.gif";
+import AfterTwo from "../../img/afterTwo.gif";
+import AfterThree from "../../img/afterThree.gif";
+
+import poppy from "../../img/poppy.jpg";
 import VideoPlayer from "../utils/Youtube";
 
 const Introduce: React.FC = () => {
@@ -92,13 +96,13 @@ const Introduce: React.FC = () => {
             onMouseEnter={handleMouseEnter} // 마우스가 올라갈 때 이벤트 핸들러 호출
           />
           <Image
-            src={MyProfile}
+            src={AfterOne}
             alt="본인"
             boxSize={"50%"}
             data-image-src={poppy} // 다른 이미지의 경로를 저장
             onMouseEnter={handleMouseEnter} // 마우스가 올라갈 때 이벤트 핸들러 호출
           />
-          <Image src={MyProfile} alt="본인" boxSize={"50%"} />
+          <Image src={AfterTwo} alt="본인" boxSize={"50%"} />
           <Image src={MyProfile} alt="본인" boxSize={"50%"} />
         </Box>
       </Box>
