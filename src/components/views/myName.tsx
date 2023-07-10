@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 // 외부 라이브러리
 import { useMediaQuery } from "react-responsive";
-
 // 리액트 컴포넌트
 import { Box, Text } from "@chakra-ui/react";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
@@ -14,7 +13,7 @@ import Introduce from "./introduce";
 
 const MyNameBox: React.FC = () => {
   // 반응형 웹 미디어 쿼리
-  const isMedium = useMediaQuery({ maxWidth: 1285, maxHeight: 854 });
+  const isMedium = useMediaQuery({ maxWidth: 1285, maxHeight: 1440 });
   const isSmall = useMediaQuery({ maxWidth: 870 });
 
   const [isHovered, setIsHovered] = useState(false);
@@ -26,6 +25,8 @@ const MyNameBox: React.FC = () => {
   const [showIntroduce, setShowIntroduce] = useState(false);
   const [showText, setShowText] = useState(true);
 
+  console.log("ismedium:", isMedium);
+  console.log("isSmall:", isSmall);
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
