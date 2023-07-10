@@ -14,7 +14,7 @@ import poppy from "../../img/poppy.jpg";
 import VideoPlayer from "../utils/Youtube";
 
 const Introduce: React.FC = () => {
-  const isMedium = useMediaQuery({ maxWidth: 1669, maxHeight: 854 });
+  const isMedium = useMediaQuery({ maxWidth: 1285, maxHeight: 1440 });
   const isSmall = useMediaQuery({ maxWidth: 870 });
   const [currentImage, setCurrentImage] = useState(MyProfile); // 현재 보여지는 이미지의 상태
 
