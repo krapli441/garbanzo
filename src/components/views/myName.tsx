@@ -65,8 +65,20 @@ const MyNameBox: React.FC = () => {
     setIsHovered(false);
   };
 
-  const boxWidth = isClicked ? "90%" : "10%";
-  const boxHeight = isClicked ? "90%" : "17%";
+  const boxWidth = isClicked
+    ? "90%"
+    : isSmall
+    ? "20%"
+    : isMedium
+    ? "12%"
+    : "10%";
+  const boxHeight = isClicked
+    ? "90%"
+    : isSmall
+    ? "10%"
+    : isMedium
+    ? "13%"
+    : "17%";
 
   return (
     <Box
@@ -97,7 +109,6 @@ const MyNameBox: React.FC = () => {
           <Text
             className="greetingText"
             fontSize={isMedium ? "0px" : "14px"}
-            // transition={"all 0.2s ease"}
             opacity={isClicked ? 0 : 1}
             style={{
               transform: isClicked ? "scale(0)" : "scale(1)",
@@ -122,7 +133,6 @@ const MyNameBox: React.FC = () => {
           <Text
             className="greetingText"
             fontSize={isMedium ? "0px" : "14px"}
-            // transition={"all 0.2s ease"}
             opacity={isClicked ? 0 : 1}
             style={{
               transform: isClicked ? "scale(0)" : "scale(1)",

@@ -1,18 +1,21 @@
 // 리액트 라이브러리
 import React, { useState } from "react";
 import { Box, Text, Image, Highlight, Heading } from "@chakra-ui/react";
-import YouTube from "react-youtube";
+
+// 외부 라이브러리
+import { useMediaQuery } from "react-responsive";
 
 // 리액트 컴포넌트
 import MyProfile from "../../img/me.jpg";
 import AfterOne from "../../img/afterOne.gif";
 import AfterTwo from "../../img/afterTwo.gif";
-import AfterThree from "../../img/afterThree.gif";
 
 import poppy from "../../img/poppy.jpg";
 import VideoPlayer from "../utils/Youtube";
 
 const Introduce: React.FC = () => {
+  const isMedium = useMediaQuery({ maxWidth: 1669, maxHeight: 854 });
+  const isSmall = useMediaQuery({ maxWidth: 870 });
   const [currentImage, setCurrentImage] = useState(MyProfile); // 현재 보여지는 이미지의 상태
 
   const handleMouseEnter = (event: React.MouseEvent<HTMLImageElement>) => {
@@ -37,7 +40,7 @@ const Introduce: React.FC = () => {
         gap={"20px"}
         padding={"20px"}
       >
-        <Heading>
+        <Heading fontSize={isSmall ? "14px" : isMedium ? "24px" : "34px"}>
           <Highlight
             query={["좋은 디자인", "좋은 경험"]}
             styles={{ px: "1", py: "1", bg: "white" }}
@@ -45,7 +48,10 @@ const Introduce: React.FC = () => {
             좋은 디자인이 곧 좋은 경험으로 이어진다고 믿습니다.
           </Highlight>
         </Heading>
-        <Heading size={"2xl"}>
+        <Heading
+          size={"2xl"}
+          fontSize={isSmall ? "24px" : isMedium ? "32px" : "48px"}
+        >
           <Highlight
             query={["UI", "UX"]}
             styles={{ px: "1", py: "1", bg: "white" }}
@@ -53,7 +59,7 @@ const Introduce: React.FC = () => {
             UI, UX에 깊은 관심을 갖고 있습니다.
           </Highlight>
         </Heading>
-        <Heading>
+        <Heading fontSize={isSmall ? "14px" : isMedium ? "32px" : "34px"}>
           <Highlight
             query={["탐구"]}
             styles={{ px: "1", py: "1", bg: "white" }}
@@ -61,7 +67,10 @@ const Introduce: React.FC = () => {
             인간에 대한 탐구를 즐겨 합니다.
           </Highlight>
         </Heading>
-        <Heading size={"2xl"}>
+        <Heading
+          size={"2xl"}
+          fontSize={isSmall ? "24px" : isMedium ? "32px" : "48px"}
+        >
           <Highlight
             query={["음악", "사랑"]}
             styles={{ px: "1", py: "1", bg: "white" }}
@@ -70,7 +79,7 @@ const Introduce: React.FC = () => {
           </Highlight>
         </Heading>
 
-        <Heading>
+        <Heading fontSize={isSmall ? "14px" : isMedium ? "32px" : "34px"}>
           <Highlight
             query={["디제잉"]}
             styles={{ px: "1", py: "1", bg: "white" }}
