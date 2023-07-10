@@ -1,16 +1,10 @@
 // 리액트 라이브러리
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // 외부 라이브러리
 import { Box } from "@chakra-ui/react";
 
-// 리액트 컴포넌트
-import MovingBox from "./perspectiveBox";
-
-// 리액트 컴포넌트
-import MyNameBox from "./myName";
-
-export default function main() {
+const PerspectiveBox: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -46,33 +40,27 @@ export default function main() {
         y: containerRef.current.offsetHeight / 2,
       });
   }, []);
+
   return (
-    <>
+    <Box ref={containerRef}       style={{
+      width: "100vw",
+      height: "100vh",
+      position: "relative",
+    }} onMouseMove={handleMouseMove}>
       <Box
-        ref={containerRef}
-        onMouseMove={handleMouseMove}
-        className="main"
-        width={"100%"}
-        height={"80vh"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <MyNameBox />
-        <Box
         style={{
           width: "100px",
           height: "100px",
           background: "red",
           position: "absolute",
           left: "50%",
-          top: "55%",
+          top: "50%",
           transform: `translate(-50%, -50%) translate(${boxPosition.x}px, ${boxPosition.y}px)`,
           transition: "transform 0.2s cubic-bezier(.06,.54,.5,.95)",
-          zIndex:"-1"
         }}
       ></Box>
-      </Box>
-    </>
+    </Box>
   );
-}
+};
+
+export default PerspectiveBox;

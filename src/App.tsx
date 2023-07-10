@@ -6,6 +6,7 @@ import Header from "./components/views/header";
 import Main from "./components/views/main";
 import Bottom from "./components/views/bottom";
 import { Box, Image, Text } from "@chakra-ui/react";
+;
 
 // css
 import "./css/root.css";
