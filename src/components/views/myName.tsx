@@ -1,6 +1,9 @@
 // 리액트 라이브러리
 import React, { useState, useEffect } from "react";
 
+// 외부 라이브러리
+import { useMediaQuery } from "react-responsive";
+
 // 리액트 컴포넌트
 import { Box, Text } from "@chakra-ui/react";
 import { useRandomFontWeight } from "../Hooks/RandomFontWeightHooks";
@@ -9,7 +12,11 @@ import Introduce from "./introduce";
 
 // css
 
-export default function myNameBox() {
+const MyNameBox: React.FC = () => {
+  // 반응형 웹 미디어 쿼리
+  const isMedium = useMediaQuery({ maxWidth: 1285, maxHeight: 854 });
+  const isSmall = useMediaQuery({ maxWidth: 870 });
+
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const fontType: Array<number> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -89,8 +96,8 @@ export default function myNameBox() {
         <>
           <Text
             className="greetingText"
-            fontSize={14}
-            transition={"all 0.2s ease"}
+            fontSize={isMedium ? "0px" : "14px"}
+            // transition={"all 0.2s ease"}
             opacity={isClicked ? 0 : 1}
             style={{
               transform: isClicked ? "scale(0)" : "scale(1)",
@@ -100,7 +107,7 @@ export default function myNameBox() {
           </Text>
           <Text
             className="myNameText"
-            fontSize={48}
+            fontSize={isSmall ? "20px" : isMedium ? "32px" : "48px"}
             fontWeight={fontWeight}
             bgGradient={textcolor}
             bgClip={"text"}
@@ -114,8 +121,8 @@ export default function myNameBox() {
           </Text>
           <Text
             className="greetingText"
-            fontSize={14}
-            transition={"all 0.2s ease"}
+            fontSize={isMedium ? "0px" : "14px"}
+            // transition={"all 0.2s ease"}
             opacity={isClicked ? 0 : 1}
             style={{
               transform: isClicked ? "scale(0)" : "scale(1)",
@@ -130,4 +137,6 @@ export default function myNameBox() {
       introduce.tsx 렌더링 */}
     </Box>
   );
-}
+};
+
+export default MyNameBox;

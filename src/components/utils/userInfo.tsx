@@ -1,24 +1,22 @@
 // 리액트 라이브러리
 import React from "react";
 
-import { Box, Image, Text } from "@chakra-ui/react";
+// 외부 라이브러리
+import { useMediaQuery } from "react-responsive";
+
 // 리액트 컴포넌트
+import { Text } from "@chakra-ui/react";
 
-// * 본문
-
-// const UserInfoStyle = styled.div`
-//   font-size: 12px;
-// `;
-
-const userInfo = navigator.userAgent;
-// console.log(userInfo);
-
-export default function AccessUserInformation() {
+const AccessUserInformation: React.FC = () => {
+  const isSmall = useMediaQuery({ maxWidth: 870 });
+  const userInfo = navigator.userAgent;
   return (
     <>
-      <Text className="accessUser" fontSize={12}>
+      <Text className="accessUser" fontSize={isSmall ? "0" : "12px"}>
         {userInfo}
       </Text>
     </>
   );
-}
+};
+
+export default AccessUserInformation;

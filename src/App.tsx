@@ -1,26 +1,28 @@
 // 리액트 라이브러리
 import React, { useEffect } from "react";
 
+// 외부 라이브러리
+import { Box } from "@chakra-ui/react";
+import { useMediaQuery } from "react-responsive";
 // 리액트 컴포넌트
 import Header from "./components/views/header";
 import Main from "./components/views/main";
 import Bottom from "./components/views/bottom";
-import { Box, Image, Text } from "@chakra-ui/react";
-;
-
 // css
 import "./css/root.css";
 
-export default function App() {
+const App: React.FC = () => {
   useEffect(() => {
-    document.title = "krapli's portfolio";
-  });
+    document.title = "hi, imnotkrapli.";
+  }, []);
+
+  const isMobile = useMediaQuery({ maxWidth: 1285, maxHeight: 854 });
 
   return (
     <Box
       className="container"
-      width="100%"
-      height="100vh"
+      width={isMobile ? "100%" : "100%"} // 1285px 이하일 경우 해상도를 100%으로 조절
+      height={isMobile ? "100%" : "100%"} // 854px 이하일 경우 해상도를 100%으로 조절
       mx="auto"
       display="flex"
       flexDirection="column"
@@ -34,4 +36,6 @@ export default function App() {
       <Bottom />
     </Box>
   );
-}
+};
+
+export default App;

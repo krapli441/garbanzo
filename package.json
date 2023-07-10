@@ -24,6 +24,7 @@
     "framer-motion": "^10.12.17",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
+    "react-responsive": "^9.0.2",
     "react-transition-group": "^4.4.5",
     "react-youtube": "^10.1.0",
     "stream-browserify": "^3.0.0",

@@ -1,11 +1,10 @@
 // 리액트 라이브러리
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 
 // 외부 라이브러리
 import { Box } from "@chakra-ui/react";
 
 // 리액트 컴포넌트
-import MovingBox from "./perspectiveBox";
 
 // 리액트 컴포넌트
 import MyNameBox from "./myName";
