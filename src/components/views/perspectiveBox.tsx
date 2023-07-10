@@ -42,11 +42,15 @@ const PerspectiveBox: React.FC = () => {
   }, []);
 
   return (
-    <Box ref={containerRef}       style={{
-      width: "100vw",
-      height: "100vh",
-      position: "relative",
-    }} onMouseMove={handleMouseMove}>
+    <Box
+      ref={containerRef}
+      style={{
+        width: "100vw",
+        height: "100vh",
+        position: "relative",
+      }}
+      onMouseMove={handleMouseMove}
+    >
       <Box
         style={{
           width: "100px",
